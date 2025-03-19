@@ -1,1 +1,1125 @@
-<!DOCTYPE html><html><head><title>beirut-food-truck.revunova.net</title></head><body><h1>Welcome to beirut-food-truck.revunova.net</h1><p>Site created with Laravel GitHub Pages Automation</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Bites - Gourmet Food Truck</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <script> tailwind.config = {
+        theme: {
+            extend: {
+                colors: {primary: '#FF4B2B', secondary: '#2D3B4F', accent: '#FFD166',},
+                fontFamily: {display: ['Playfair Display', 'serif'], body: ['Montserrat', 'sans-serif'],}
+            }
+        }
+    } </script>
+    <style> body {
+        font-family: 'Montserrat', sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    .hero-pattern {
+        background-color: #2D3B4F;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF4B2B' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .svg-white {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+    }
+
+    .circle-clip {
+        clip-path: circle(50% at 50% 50%);
+    } </style>
+</head>
+<body class="bg-gray-50 text-gray-800"> <!-- SVG Sprite Definitions -->
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="icon-location" viewBox="0 0 24 24">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+    </symbol>
+    <symbol id="icon-truck" viewBox="0 0 24 24">
+        <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+    </symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24">
+        <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5v-5z"/>
+    </symbol>
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </symbol>
+    <symbol id="icon-arrow-up" viewBox="0 0 24 24">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+    </symbol>
+    <symbol id="icon-email" viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24">
+        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+    </symbol>
+</svg>
+<!-- Navigation -->
+<header class="bg-white shadow-md fixed w-full z-50">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <a href="#" class="text-2xl font-display font-bold text-secondary flex items-center">
+                <span class="bg-primary text-white p-2 rounded-full mr-2 flex items-center justify-center">
+                    <svg class="w-6 h-6">
+                        <use href="#icon-truck"></use>
+                    </svg>
+                </span>
+                Urban Bites
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-10">
+                <a href="#about" class="font-medium hover:text-primary transition duration-300">About</a>
+                <a href="#locations" class="font-medium hover:text-primary transition duration-300">Locations</a>
+                <a href="#menu" class="font-medium hover:text-primary transition duration-300">Menu</a>
+                <a href="#events" class="font-medium hover:text-primary transition duration-300">Events</a>
+                <a href="#contact" class="bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-opacity-90 transition duration-300">Contact</a>
+            </nav>
+
+            <button id="mobile-menu-button" class="md:hidden text-gray-500 focus:outline-none">
+                <svg class="w-6 h-6">
+                    <use href="#icon-menu"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-secondary bg-opacity-90 z-50 hidden flex-col justify-center items-center">
+    <button id="mobile-menu-close" class="absolute top-6 right-6 text-white">
+        <svg class="w-8 h-8">
+            <use href="#icon-close"></use>
+        </svg>
+    </button>
+
+    <nav class="flex flex-col items-center space-y-8">
+        <a href="#about" class="text-white text-2xl font-medium hover:text-primary transition duration-300">About</a>
+        <a href="#locations" class="text-white text-2xl font-medium hover:text-primary transition duration-300">Locations</a>
+        <a href="#menu" class="text-white text-2xl font-medium hover:text-primary transition duration-300">Menu</a>
+        <a href="#events" class="text-white text-2xl font-medium hover:text-primary transition duration-300">Events</a>
+        <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-full text-xl font-medium hover:bg-opacity-90 transition duration-300 mt-4">Contact</a>
+    </nav>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-pattern text-white pt-32 pb-20 md:pb-32">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="font-display text-4xl md:text-6xl font-bold mb-6 leading-tight">Gourmet Street Food
+                    <span class="text-primary">On The Move</span></h1>
+                <p class="text-lg md:text-xl mb-8 text-gray-200 max-w-xl">Experience culinary innovation that comes to
+                    you. Follow us across the city for daily specials and unique flavors.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#locations" class="bg-primary hover:bg-opacity-90 font-medium text-white py-3 px-8 rounded-full transition duration-300 text-center">Find
+                        Us Today</a>
+                    <a href="#menu" class="bg-transparent border-2 border-white hover:bg-white hover:text-secondary font-medium py-3 px-8 rounded-full transition duration-300 text-center">View
+                        Menu</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <img src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="Urban Bites Food Truck" class="rounded-lg shadow-2xl md:ml-auto relative z-10 max-w-md mx-auto">
+                <div class="absolute top-10 -left-4 bg-accent w-24 h-24 rounded-full z-0 hidden md:block"></div>
+                <div class="absolute -bottom-6 right-10 bg-primary w-32 h-32 rounded-full z-0 hidden md:block"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="py-16 -mt-10 relative z-20">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-primary">
+                        <use href="#icon-location"></use>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Changing Locations</h3>
+                <p class="text-gray-600">We move around the city to bring our food closer to you. Check our schedule to
+                    find us!</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-primary">
+                        <use href="#icon-menu"></use>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Daily Specials</h3>
+                <p class="text-gray-600">Our innovative chefs create new specials every day using seasonal
+                    ingredients.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-primary">
+                        <use href="#icon-calendar"></use>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Private Events</h3>
+                <p class="text-gray-600">Book our food truck for your private events and make them truly memorable.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 md:pr-12 mb-10 md:mb-0">
+                <span class="text-primary font-medium">Our Story</span>
+                <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 mt-2 text-secondary">Redefining Street Food
+                    Since 2018</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Urban Bites started with a simple mission: to serve restaurant-quality food in a mobile format. Our
+                    founder, Chef Emily Chen, left her position at a Michelin-starred restaurant to bring gourmet
+                    flavors to the streets.
+                </p>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    We source our ingredients from local farms and suppliers, ensuring that everything we serve is fresh
+                    and sustainable. Our team of talented chefs constantly experiments with new flavors and techniques
+                    to create unforgettable culinary experiences.
+                </p>
+                <div class="flex items-center">
+                    <div class="mr-6"><span class="block text-4xl font-bold text-primary">5K+</span>
+                        <span class="text-gray-600">Happy Customers</span></div>
+                    <div class="mr-6"><span class="block text-4xl font-bold text-primary">25+</span>
+                        <span class="text-gray-600">Unique Recipes</span></div>
+                    <div><span class="block text-4xl font-bold text-primary">12</span> <span class="text-gray-600">City Locations</span>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Chef preparing food" class="rounded-lg shadow-md h-64 object-cover w-full">
+                <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Food truck customers" class="rounded-lg shadow-md h-64 object-cover w-full mt-8">
+                <img src="https://images.unsplash.com/photo-1576867757603-05b134ebc379?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Street food preparation" class="rounded-lg shadow-md h-64 object-cover w-full">
+                <img src="https://images.unsplash.com/photo-1533630018502-b85f33b9ee7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Food truck exterior" class="rounded-lg shadow-md h-64 object-cover w-full mt-8">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Locations Section -->
+<section id="locations" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-primary font-medium">Where To Find Us</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-4 mt-2 text-secondary">Our Weekly Schedule</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Track our food truck as we move around the city. Check our
+                real-time location updates on social media for the most accurate information.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                <div class="bg-secondary text-white p-4">
+                    <h3 class="text-xl font-bold">Monday & Tuesday</h3>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-start mb-4">
+                        <svg class="w-6 h-6 text-primary mt-1 mr-3">
+                            <use href="#icon-location"></use>
+                        </svg>
+                        <div>
+                            <h4 class="font-bold">Financial District</h4>
+                            <p class="text-gray-600">200 Montgomery St</p>
+                            <p class="text-gray-600 mb-2">11:00 AM - 2:30 PM</p>
+                            <a href="https://maps.google.com" target="_blank" class="text-primary hover:underline font-medium inline-flex items-center">
+                                Directions
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                <div class="bg-secondary text-white p-4">
+                    <h3 class="text-xl font-bold">Wednesday & Thursday</h3>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-start mb-4">
+                        <svg class="w-6 h-6 text-primary mt-1 mr-3">
+                            <use href="#icon-location"></use>
+                        </svg>
+                        <div>
+                            <h4 class="font-bold">Innovation Park</h4>
+                            <p class="text-gray-600">500 Technology Drive</p>
+                            <p class="text-gray-600 mb-2">11:00 AM - 2:30 PM</p>
+                            <a href="https://maps.google.com" target="_blank" class="text-primary hover:underline font-medium inline-flex items-center">
+                                Directions
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                <div class="bg-secondary text-white p-4">
+                    <h3 class="text-xl font-bold">Friday - Sunday</h3>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-start mb-4">
+                        <svg class="w-6 h-6 text-primary mt-1 mr-3">
+                            <use href="#icon-location"></use>
+                        </svg>
+                        <div>
+                            <h4 class="font-bold">Waterfront Plaza</h4>
+                            <p class="text-gray-600">100 Harbor Drive</p>
+                            <p class="text-gray-600 mb-2">12:00 PM - 8:00 PM</p>
+                            <a href="https://maps.google.com" target="_blank" class="text-primary hover:underline font-medium inline-flex items-center">
+                                Directions
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-accent bg-opacity-10 p-8 rounded-xl">
+            <h3 class="text-2xl font-bold mb-6 text-secondary">Special Events This Week</h3>
+            <div id="special-locations" class="space-y-4">
+                <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm">
+                    <div class="flex items-center">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                            <svg class="w-6 h-6 text-primary">
+                                <use href="#icon-calendar"></use>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">International Food Festival</h4>
+                            <p class="text-gray-600">Saturday, March 22nd, 4:00 PM - 10:00 PM</p>
+                            <p class="text-gray-600">City Park, Main Stage Area</p>
+                        </div>
+                    </div>
+                    <span class="bg-accent text-secondary text-sm font-semibold px-4 py-1 rounded-full">Featured Event</span>
+                </div>
+                <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm">
+                    <div class="flex items-center">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                            <svg class="w-6 h-6 text-primary">
+                                <use href="#icon-calendar"></use>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Artisan Market</h4>
+                            <p class="text-gray-600">Sunday, March 23rd, 9:00 AM - 2:00 PM</p>
+                            <p class="text-gray-600">Farmers Market Pavilion</p>
+                        </div>
+                    </div>
+                    <span class="bg-accent text-secondary text-sm font-semibold px-4 py-1 rounded-full">Special Menu</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Menu Section -->
+<section id="menu" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-primary font-medium">Our Culinary Offerings</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-4 mt-2 text-secondary">Discover Our Menu</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">We craft our dishes using locally-sourced ingredients with global
+                flavors. Our menu changes seasonally, but these favorites are always available.</p>
+        </div>
+
+        <!-- Today's Specials -->
+        <div class="mb-16">
+            <h3 class="text-2xl font-bold mb-6 text-center">Today's Specials</h3>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div id="daily-specials" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex items-center bg-gray-50 p-6 rounded-xl">
+                        <div class="w-24 h-24 overflow-hidden rounded-full mr-6 flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Special Item" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <span class="text-primary text-sm font-medium">Chef's Choice</span>
+                            <h4 class="font-bold text-xl">Korean BBQ Tacos</h4>
+                            <p class="text-gray-600 mb-1">Marinated beef, kimchi slaw, gochujang aioli</p>
+                            <p class="text-primary font-bold text-lg">$9.50</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center bg-gray-50 p-6 rounded-xl">
+                        <div class="w-24 h-24 overflow-hidden rounded-full mr-6 flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1515443961218-a51367888e4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Special Item" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <span class="text-primary text-sm font-medium">Limited Offering</span>
+                            <h4 class="font-bold text-xl">Truffle Parmesan Fries</h4>
+                            <p class="text-gray-600 mb-1">Hand-cut potatoes, truffle oil, aged parmesan</p>
+                            <p class="text-primary font-bold text-lg">$6.75</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Regular Menu -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Gourmet Burger" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Gourmet Burger</h3>
+                    <p class="text-gray-600 mb-4">Grass-fed beef patty, caramelized onions, aged cheddar, truffle aioli,
+                        brioche bun</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-primary font-bold text-lg">$12.95</p>
+                        <div class="flex">
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1562059390-a761a084768e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fish Tacos" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Baja Fish Tacos</h3>
+                    <p class="text-gray-600 mb-4">Beer-battered cod, lime crema, pickled cabbage, cilantro, corn
+                        tortillas</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-primary font-bold text-lg">$10.95</p>
+                        <div class="flex">
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-gray-300">
+                                <use href="#icon-star"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1600628421055-4d30de868b8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Loaded Fries" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Loaded Fries</h3>
+                    <p class="text-gray-600 mb-4">Hand-cut fries, apple-wood smoked bacon, jalapeños, cheese sauce,
+                        green onions</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-primary font-bold text-lg">$8.95</p>
+                        <div class="flex">
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-gray-300">
+                                <use href="#icon-star"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mediterranean Bowl" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Mediterranean Bowl</h3>
+                    <p class="text-gray-600 mb-4">House-made falafel, quinoa tabbouleh, hummus, cucumber, tomato,
+                        tzatziki sauce</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-primary font-bold text-lg">$11.95</p>
+                        <div class="flex">
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a3479c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Pulled Pork Sandwich" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Pulled Pork Sandwich</h3>
+                    <p class="text-gray-600 mb-4">Slow-cooked pork shoulder, house BBQ sauce, apple slaw, artisan
+                        roll</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-primary font-bold text-lg">$11.50</p>
+                        <div class="flex">
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-gray-300">
+                                <use href="#icon-star"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1624833714738-3a8de3efb191?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Churros" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Churros & Chocolate</h3>
+                    <p class="text-gray-600 mb-4">Freshly fried churros dusted with cinnamon sugar, served with rich
+                        chocolate dipping sauce</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-primary font-bold text-lg">$6.95</p>
+                        <div class="flex">
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent">
+                                <use href="#icon-star"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <p class="text-gray-600 italic mb-6">Our menu changes seasonally. Follow us on social media for daily
+                specials!</p>
+            <a href="#" class="inline-block bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300">Download
+                Full Menu</a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="py-20 bg-secondary text-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-accent font-medium">What People Say</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-4 mt-2">Customer Love</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto">Don't just take our word for it — here's what our customers have
+                to say about Urban Bites.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white bg-opacity-5 p-8 rounded-xl backdrop-blur-sm">
+                <div class="flex mb-4">
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                </div>
+                <p class="mb-6 italic">"The Korean BBQ tacos are out of this world! I follow Urban Bites on Instagram so
+                    I never miss when they're in my neighborhood."</p>
+                <div class="flex items-center">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Customer" class="w-12 h-12 rounded-full mr-4 object-cover">
+                    <div>
+                        <p class="font-bold">Michael T.</p>
+                        <p class="text-gray-400 text-sm">Tech Professional</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white bg-opacity-5 p-8 rounded-xl backdrop-blur-sm">
+                <div class="flex mb-4">
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                </div>
+                <p class="mb-6 italic">"Urban Bites catered our company event and everyone was blown away by the
+                    quality. Not your typical food truck fare - this is gourmet on wheels!"</p>
+                <div class="flex items-center">
+                    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Customer" class="w-12 h-12 rounded-full mr-4 object-cover">
+                    <div>
+                        <p class="font-bold">Sarah J.</p>
+                        <p class="text-gray-400 text-sm">HR Director</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white bg-opacity-5 p-8 rounded-xl backdrop-blur-sm">
+                <div class="flex mb-4">
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                    <svg class="w-5 h-5 text-accent">
+                        <use href="#icon-star"></use>
+                    </svg>
+                </div>
+                <p class="mb-6 italic">"I hired Urban Bites for my wedding reception and it was the highlight of the
+                    evening. Our guests are still talking about the food months later!"</p>
+                <div class="flex items-center">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Customer" class="w-12 h-12 rounded-full mr-4 object-cover">
+                    <div>
+                        <p class="font-bold">David L.</p>
+                        <p class="text-gray-400 text-sm">Marketing Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Events Section -->
+<section id="events" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row gap-12">
+            <div class="md:w-1/2">
+                <span class="text-primary font-medium">Private Events</span>
+                <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 mt-2 text-secondary">Book Our Food
+                    Truck</h2>
+                <p class="text-gray-600 mb-6">Make your next event unforgettable with Urban Bites. Our food truck is
+                    available for private bookings, bringing our delicious menu directly to your location.</p>
+
+                <div class="bg-gray-50 p-6 rounded-xl mb-8">
+                    <h3 class="font-bold text-xl mb-4 text-secondary">Perfect For:</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Corporate Events & Team Lunches
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Weddings & Rehearsal Dinners
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Birthday Parties & Celebrations
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            School Events & Fundraisers
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Community Festivals & Block Parties
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="text-gray-600 mb-6">We offer customized menus tailored to your event's needs, dietary
+                    requirements, and budget. Our team handles everything from setup to cleanup.</p>
+
+                <a href="#contact" class="inline-block bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300">Get
+                    a Quote</a>
+            </div>
+
+            <div class="md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Private event catering" class="w-full h-80 object-cover rounded-xl shadow-lg mb-8">
+
+                <div class="bg-secondary text-white p-8 rounded-xl relative">
+                    <div class="absolute -top-6 -left-6 bg-accent w-12 h-12 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-secondary">
+                            <use href="#icon-star"></use>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4">What Our Event Clients Say</h3>
+                    <p class="italic mb-6">"Urban Bites made our company summer party a huge success. The food was
+                        exceptional, the service was professional, and they accommodated all our dietary needs. Highly
+                        recommend for any corporate function!"</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Event Client" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <p class="font-bold">Jennifer K.</p>
+                            <p class="text-gray-300 text-sm">Director of Operations, TechCo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-primary">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Experience Urban Bites?</h2>
+        <p class="text-white text-opacity-90 max-w-2xl mx-auto mb-8">Follow us on social media for daily location
+            updates and special menu offerings.</p>
+        <div class="flex justify-center space-x-6">
+            <a href="#" class="bg-white text-primary font-medium py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300">Find
+                Us Today</a>
+            <a href="#contact" class="bg-transparent border-2 border-white text-white font-medium py-3 px-8 rounded-full hover:bg-white hover:text-primary transition duration-300">Book
+                For Event</a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-primary font-medium">Get In Touch</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-4 mt-2 text-secondary">Contact Us</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Have questions or want to book our food truck for your event?
+                We'd love to hear from you!</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-12">
+            <div class="md:w-1/2">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2 font-medium">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2 font-medium">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-700 mb-2 font-medium">Phone</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="inquiry-type" class="block text-gray-700 mb-2 font-medium">Inquiry Type</label>
+                        <select id="inquiry-type" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <option value="general">General Question</option>
+                            <option value="booking">Private Event Booking</option>
+                            <option value="catering">Catering Services</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 mb-2 font-medium">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-opacity-90 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <div class="md:w-1/2">
+                <div class="bg-white p-8 rounded-xl shadow-md h-full">
+                    <h3 class="font-bold text-2xl mb-6 text-secondary">Contact Information</h3>
+
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <svg class="w-6 h-6 text-primary">
+                                    <use href="#icon-email"></use>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Email Us</h4>
+                                <a href="mailto:info@urbanbites.com" class="text-primary hover:underline transition duration-300">info@urbanbites.com</a>
+                                <p class="text-gray-600 text-sm mt-1">We'll respond within 24 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <svg class="w-6 h-6 text-primary">
+                                    <use href="#icon-phone"></use>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Call Us</h4>
+                                <a href="tel:+15551234567" class="text-primary hover:underline transition duration-300">(555)
+                                    123-4567</a>
+                                <p class="text-gray-600 text-sm mt-1">Mon-Fri from 9am to 6pm</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <svg class="w-6 h-6 text-primary">
+                                    <use href="#icon-calendar"></use>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Business Hours</h4>
+                                <p class="text-gray-600">Monday - Friday: 11:00 AM - 3:00 PM</p>
+                                <p class="text-gray-600">Saturday - Sunday: 12:00 PM - 8:00 PM</p>
+                                <p class="text-gray-600 text-sm italic mt-1">Hours may vary by location</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-lg mb-3">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-secondary text-white p-3 rounded-full hover:bg-primary transition duration-300">
+                                    <i class="fab fa-instagram text-lg"></i>
+                                </a>
+                                <a href="#" class="bg-secondary text-white p-3 rounded-full hover:bg-primary transition duration-300">
+                                    <i class="fab fa-facebook-f text-lg"></i>
+                                </a>
+                                <a href="#" class="bg-secondary text-white p-3 rounded-full hover:bg-primary transition duration-300">
+                                    <i class="fab fa-twitter text-lg"></i>
+                                </a>
+                                <a href="#" class="bg-secondary text-white p-3 rounded-full hover:bg-primary transition duration-300">
+                                    <i class="fab fa-tiktok text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-secondary text-white pt-16 pb-8">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div>
+                <a href="#" class="text-2xl font-display font-bold flex items-center mb-6">
+                    <span class="bg-primary text-white p-2 rounded-full mr-2 flex items-center justify-center">
+                        <svg class="w-6 h-6">
+                            <use href="#icon-truck"></use>
+                        </svg>
+                    </span>
+                    Urban Bites
+                </a>
+                <p class="text-gray-300 mb-6">Gourmet street food on wheels, bringing culinary excellence to various
+                    locations throughout the city.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-primary transition duration-300">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition duration-300">
+                        <i class="fab fa-facebook-f text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition duration-300">
+                        <i class="fab fa-twitter text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition duration-300">
+                        <i class="fab fa-tiktok text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                <ul class="space-y-3">
+                    <li><a href="#about" class="text-gray-300 hover:text-primary transition duration-300">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#locations" class="text-gray-300 hover:text-primary transition duration-300">Locations</a>
+                    </li>
+                    <li><a href="#menu" class="text-gray-300 hover:text-primary transition duration-300">Our Menu</a>
+                    </li>
+                    <li><a href="#events" class="text-gray-300 hover:text-primary transition duration-300">Private
+                        Events</a></li>
+                    <li><a href="#contact" class="text-gray-300 hover:text-primary transition duration-300">Contact
+                        Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold mb-6">Contact Info</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-3 text-primary">
+                            <use href="#icon-email"></use>
+                        </svg>
+                        <a href="mailto:info@urbanbites.com" class="text-gray-300 hover:text-primary transition duration-300">info@urbanbites.com</a>
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-3 text-primary">
+                            <use href="#icon-phone"></use>
+                        </svg>
+                        <a href="tel:+15551234567" class="text-gray-300 hover:text-primary transition duration-300">(555)
+                            123-4567</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold mb-6">Newsletter</h3>
+                <p class="text-gray-300 mb-4">Subscribe to get special offers, menu updates, and location alerts.</p>
+                <form class="flex">
+                    <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full focus:outline-none">
+                    <button type="submit" class="bg-primary text-white px-4 rounded-r-lg hover:bg-opacity-90 transition duration-300">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700 pt-8 text-center">
+            <p class="text-gray-400 mb-4">© 2025 Urban Bites. All rights reserved.</p>
+            <p class="text-gray-400">Website designed with ♥ by DV Team</p>
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/15551234567" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300 z-40">
+    <svg class="w-6 h-6">
+        <use href="#icon-whatsapp"></use>
+    </svg>
+</a>
+
+<!-- Go Up Button -->
+<button id="go-up-btn" class="fixed bottom-6 left-6 bg-primary hover:bg-opacity-90 text-white p-4 rounded-full shadow-lg transition duration-300 z-40 hidden">
+    <svg class="w-6 h-6">
+        <use href="#icon-arrow-up"></use>
+    </svg>
+</button>
+
+<!-- Font Awesome for social icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- JavaScript -->
+<script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileLinks = mobileMenuOverlay.querySelectorAll('a');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenuOverlay.classList.remove('hidden');
+        mobileMenuOverlay.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    });
+
+    mobileMenuClose.addEventListener('click', () => {
+        mobileMenuOverlay.classList.add('hidden');
+        mobileMenuOverlay.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    });
+
+    // Close mobile menu when clicking a link
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuOverlay.classList.add('hidden');
+            mobileMenuOverlay.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        });
+    });
+
+    // Go up button functionality
+    const goUpBtn = document.getElementById('go-up-btn');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            goUpBtn.classList.remove('hidden');
+        } else {
+            goUpBtn.classList.add('hidden');
+        }
+    });
+
+    goUpBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Contact form submission
+    const contactForm = document.getElementById('contact-form');
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const inquiryType = document.getElementById('inquiry-type').value;
+        const message = document.getElementById('message').value;
+
+        // Simple validation
+        if (!name || !email || !message) {
+            alert('Please fill in all required fields');
+            return;
+        }
+
+        // In a real implementation, you would send this data to a server
+        alert('Thank you for your message! We will get back to you soon.');
+        contactForm.reset();
+    });
+
+    // Dynamic special locations (simulating data that might come from an API)
+    const specialLocations = [
+        {
+            name: 'International Food Festival',
+            date: 'Saturday, March 22nd, 4:00 PM - 10:00 PM',
+            location: 'City Park, Main Stage Area',
+            featured: true
+        },
+        {
+            name: 'Artisan Market',
+            date: 'Sunday, March 23rd, 9:00 AM - 2:00 PM',
+            location: 'Farmers Market Pavilion',
+            featured: false
+        },
+        {
+            name: 'Music in the Park Series',
+            date: 'Friday, March 28th, 6:00 PM - 9:00 PM',
+            location: 'Riverside Park Amphitheater',
+            featured: true
+        }
+    ];
+
+    // Dynamic daily specials (simulating data that might come from an API)
+    let dailySpecials = [
+        {
+            name: 'Korean BBQ Tacos',
+            description: 'Marinated beef, kimchi slaw, gochujang aioli',
+            price: '$9.50',
+            type: 'Chef\'s Choice',
+            image: 'https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80'
+        },
+        {
+            name: 'Truffle Parmesan Fries',
+            description: 'Hand-cut potatoes, truffle oil, aged parmesan',
+            price: '$6.75',
+            type: 'Limited Offering',
+            image: 'https://images.unsplash.com/photo-1515443961218-a51367888e4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80'
+        }
+    ];
+
+    // Function to update daily specials
+    function updateDailySpecials() {
+        const specialsContainer = document.getElementById('daily-specials');
+        specialsContainer.innerHTML = '';
+
+        dailySpecials.forEach(special => {
+            const specialEl = document.createElement('div');
+            specialEl.className = 'flex items-center bg-gray-50 p-6 rounded-xl';
+            specialEl.innerHTML = `
+                <div class="w-24 h-24 overflow-hidden rounded-full mr-6 flex-shrink-0">
+                    <img src="${special.image}" alt="${special.name}" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="text-primary text-sm font-medium">${special.type}</span>
+                    <h4 class="font-bold text-xl">${special.name}</h4>
+                    <p class="text-gray-600 mb-1">${special.description}</p>
+                    <p class="text-primary font-bold text-lg">${special.price}</p>
+                </div>
+            `;
+            specialsContainer.appendChild(specialEl);
+        });
+    }
+
+    // For demonstration purposes - header scroll effect
+    window.addEventListener('scroll', function () {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('shadow-lg');
+        } else {
+            header.classList.remove('shadow-lg');
+        }
+    });
+</script>
+</body>
+</html>
